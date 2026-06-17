@@ -21,5 +21,5 @@ Route::prefix('diagnosa')->group(function(){
     Route::get('/create', [DiagnosaController::class, 'create'])->name('diagnosa.create');
     Route::post('/show', [DiagnosaController::class, 'proses'])->name('diagnosa.proses');
     Route::post('/step-real', [DiagnosaController::class, 'step'])->name('diagnosa.step');
-});
+})->middleware('auth');
 
