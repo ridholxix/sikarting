@@ -1,0 +1,58 @@
+// Fonts
+@import url("https://fonts.bunny.net/css?family=Nunito");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+@import "../css/app.css";
+
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+.table td, .table th {
+    padding: 0.75rem;
+    vertical-align: middle;
+}
+
+main {
+    min-height: 71.8vh;
+}
+
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+    vertical-align: baseline;
+}
+
+//@media (min-width: 1200px) {
+//    .container {
+//        max-width: 1140px;
+//    }
+//}
+
+a {
+    text-decoration: none !important;
+}
+
+.data-row {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.data-row:hover {
+    background-color: #e9ecef;
+}
+
+.data-row:not(:last-child) {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.data-row small {
+    display: block;
+    line-height: 1.4;
+}
