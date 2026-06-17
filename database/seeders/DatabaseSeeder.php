@@ -16,25 +16,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
         User::factory()->create([
             'name' => 'Ridho Andira Wibowo',
             'email' => 'ridhoandirawibowo@gmail.com',
             'password' => Hash::make('ridho123'),
         ]);
 
-        // $this->call(GejalaSeeder::class);
-        // $this->call(StuntingSeeder::class);
-        // $this->call(BobotSeeder::class);
+        $this->call(GejalaSeeder::class);
+        $this->call(StuntingSeeder::class);
+        $this->call(BobotSeeder::class);
 
-        $this->call(GejalaSeederIspa::class);
-        $this->call(PenyakitSeederIspa::class);
-        $this->call(GejalaPenyakitSeederIspa::class);
+        // $this->call(GejalaSeederIspa::class);
+        // $this->call(PenyakitSeederIspa::class);
+        // $this->call(GejalaPenyakitSeederIspa::class);
     }
 }
