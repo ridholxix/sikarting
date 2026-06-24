@@ -6,10 +6,12 @@
             <div class="d-flex flex-row align-items-center">
                 <a href="{{ session()->previousUrl() }}"><i class="bi bi-backspace-fill fs-1"></i></a>
                 <h1 class="h2 ms-3">Data Probabilitas</h1>
-                <div class="ms-auto d-flex gap-2">
-                    <a href="{{ route('bobots.edit', ['bobot' => $bobot->kode]) }}" class="btn btn-warning btn-sm">Edit</a>
-                    <button class="btn btn-danger btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">Hapus</button>
-                </div>
+                @auth
+                    <div class="ms-auto d-flex gap-2">
+                        <a href="{{ route('bobots.edit', ['bobot' => $bobot->kode]) }}" class="btn btn-warning btn-sm">Edit</a>
+                        <button class="btn btn-danger btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">Hapus</button>
+                    </div>
+                @endauth
             </div>
             <hr>
         </div>

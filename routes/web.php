@@ -10,11 +10,9 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::middleware('auth')->group(function(){
-    Route::resource('gejalas', GejalaController::class);
-    Route::resource('stuntings', StuntingController::class);
-    Route::resource('bobots', BobotController::class);
-});
+Route::resource('gejalas', GejalaController::class);
+Route::resource('stuntings', StuntingController::class);
+Route::resource('bobots', BobotController::class);
 
 Route::prefix('diagnosa')->group(function(){
     Route::get('/', [DiagnosaController::class, 'index'])->name('diagnosa.index');

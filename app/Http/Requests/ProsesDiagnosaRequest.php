@@ -28,7 +28,7 @@ class ProsesDiagnosaRequest extends FormRequest
             'user_gejala' => [
                 'required',
                 'array',
-                'min:2',
+                'min:1',
             ],
         ];
     }

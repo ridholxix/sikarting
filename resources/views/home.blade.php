@@ -16,7 +16,7 @@
 
         <div class="rounded d-flex gap-3">
 
-            <div class="data-row d-flex align-items-start px-3 py-3 bg-light border" data-link="{{ route('gejalas.index') }}">
+            <div class="data-row d-flex align-items-start px-3 py-3 border" data-link="{{ route('gejalas.index') }}">
                 <div style="width: 60px;" class="text-center me-3">
                     <i class="bi bi-exclamation-circle" style="font-size: 1.8rem"></i>
                 </div>
@@ -34,7 +34,7 @@
                 </div>
             </div>
 
-            <div class="data-row d-flex align-items-start px-3 py-3 bg-white border" data-link="{{ route('stuntings.index') }}">
+            <div class="data-row d-flex align-items-start px-3 py-3 border" data-link="{{ route('stuntings.index') }}">
                 <div style="width: 60px;" class="text-center me-3">
                     <i class="bi bi-virus" style="font-size: 1.8rem"></i>
                 </div>
@@ -52,7 +52,7 @@
                 </div>
             </div>
 
-            <div class="data-row d-flex align-items-start px-3 py-3 bg-light border" data-link="{{ route('bobots.index') }}">
+            <div class="data-row d-flex align-items-start px-3 py-3  border" data-link="{{ route('bobots.index') }}">
 
                 <div style="width: 60px;" class="text-center me-3">
                     <i class="bi bi-percent" style="font-size: 1.8rem"></i>

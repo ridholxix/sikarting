@@ -81,8 +81,6 @@ class DiagnosaController extends Controller
         $resultNB = collect(NaiveBayesController::create($evidences))->sortBy('percent', SORT_NATURAL, true);
         $resultDS = collect(DempsterShaferController::create($massF))->sortBy('percent', SORT_NATURAL, true);
 
-        $all_massF = DempsterShaferController::getAllMassF();
-
         return view('diagnosa.show', [
             'resultNB' => $resultNB,
             'resultDS' => $resultDS,

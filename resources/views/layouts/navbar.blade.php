@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Laravel') }}
@@ -24,19 +24,12 @@
                     <a href="{{ route('diagnosa.index') }}" class="nav-link @if(\Illuminate\Support\Str::isMatch('/diagnosa/',$routes)) active fw-bold @endif">Diagnosa</a>
                 </li>
                 <!-- Authentication Links -->
-                @guest
-                    @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                    @endif
 
                     {{-- @if (Route::has('register'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                     @endif --}}
-                @else
                     <li class="nav-item">
                         <a href="{{ route('gejalas.index') }}" class="nav-link @if(\Illuminate\Support\Str::isMatch('/gejalas/',$routes)) active fw-bold @endif">Gejala</a>
                     </li>
@@ -46,6 +39,14 @@
                     <li class="nav-item">
                         <a href="{{ route('bobots.index') }}" class="nav-link @if(\Illuminate\Support\Str::isMatch('/bobots/',$routes)) active fw-bold @endif">Probabilitas</a>
                     </li>
+                @guest
+                    @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link @if(\Illuminate\Support\Str::isMatch('/login/',$routes)) active fw-bold @endif" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                    @endif
+                @endguest
+                @auth
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
@@ -63,7 +64,7 @@
                             </form>
                         </div>
                     </li>
-                @endguest
+                @endauth
             </ul>
         </div>
     </div>

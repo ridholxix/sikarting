@@ -6,7 +6,9 @@
             <div class="mb-1">
                 <div class="d-flex flex-row justify-content-between align-items-center">
                     <h1>Daftar Gejala</h1>
-                    <a class="btn btn-primary" href="{{ route('gejalas.create') }}">Tambah Gejala</a>
+                    @auth
+                        <a class="btn btn-primary" href="{{ route('gejalas.create') }}">Tambah Gejala</a>
+                    @endauth
                 </div>
                 @if (session()->has('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -30,7 +32,9 @@
                             <th>#</th>
                             <th>Kode Gejala</th>
                             <th>Nama Gejala</th>
-                            <th class="text-center">Operasi</th>
+                            @auth
+                                <th class="text-center">Operasi</th>
+                            @endauth
                         </tr>
                     </thead>
                     <tbody>
@@ -41,12 +45,14 @@
                                     <a href="{{ route('gejalas.show', ['gejala' => $gejala->kode]) }}">{{ $gejala->kode }}</a>
                                 </td>
                                 <td class="data_nama">{{ $gejala->nama }}</td>
-                                <td>
-                                    <div class="d-flex gap-2 justify-content-center">
-                                        <a href="{{ route('gejalas.edit', ['gejala' => $gejala->kode]) }}" class="btn btn-warning btn-sm">Edit</a>
-                                        <button class="btn btn-danger btn-sm btn-hapus" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal" data-kode="{{ $gejala->kode }}">Hapus</button>
-                                    </div>
-                                </td>
+                                @auth
+                                    <td>
+                                        <div class="d-flex gap-2 justify-content-center">
+                                            <a href="{{ route('gejalas.edit', ['gejala' => $gejala->kode]) }}" class="btn btn-warning btn-sm">Edit</a>
+                                            <button class="btn btn-danger btn-sm btn-hapus" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal" data-kode="{{ $gejala->kode }}">Hapus</button>
+                                        </div>
+                                    </td>
+                                @endauth
                             </tr>
                         @empty
                             <td colspan="4" class="text-center">Tidak ada data</td>
