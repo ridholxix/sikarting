@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Stunting;
-use ArithmeticError;
-use Illuminate\Http\Request;
 
 class DempsterShaferController extends Controller
 {

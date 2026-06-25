@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Stunting;
-use Illuminate\Http\Request;
-use Illuminate\Support\Collection;
 
 class NaiveBayesController extends Controller
 {
